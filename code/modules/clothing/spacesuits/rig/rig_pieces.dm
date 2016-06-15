@@ -14,6 +14,8 @@
 		"Tajara" = 'icons/mob/species/tajaran/helmet.dmi',
 		"Skrell" = 'icons/mob/species/skrell/helmet.dmi',
 		"Unathi" = 'icons/mob/species/unathi/helmet.dmi'
+		"Akula" = 'icons/mob/species/akula/helmet.dmi'
+		"Promethean" = 'icons/mob/species/skrell/helmet.dmi',
 		)
 	species_restricted = null
 
@@ -51,6 +53,7 @@
 	sprite_sheets = list(
 		"Tajara" = 'icons/mob/species/tajaran/suit.dmi',
 		"Unathi" = 'icons/mob/species/unathi/suit.dmi'
+		"Akula" = 'icons/mob/species/akula/helmet.dmi'
 		)
 	supporting_limbs = list()
 	var/obj/item/weapon/material/hatchet/tacknife
