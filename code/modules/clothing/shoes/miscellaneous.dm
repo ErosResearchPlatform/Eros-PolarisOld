@@ -250,3 +250,11 @@
 	desc = "Not a lot of horses to ride in space."
 	icon_state = "cowboy"
 	item_state = "cowboy"
+
+/obj/item/clothing/shoes/miku
+	name = "Vocaloid Boots"
+	desc = "Thigh-high boots that just make you wanna dance!"
+	icon_state = "miku"
+	item_state = "miku_boots"
+
+

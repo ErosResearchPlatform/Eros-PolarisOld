@@ -119,6 +119,14 @@ var/const/standard_monitor_styles = "blank=ipc_blank;\
 	lifelike = 1
 	blood_color = "#CCCCCC"
 
+/datum/robolimb/scorpius
+	company = "Scorpius"
+	desc = "This high quality limb is covered in a thin layer of snyth-fur and nearly indistinguishable from an organic one."
+	icon = 'icons/mob/human_races/cyberlimbs/scorpius/scorpius_main.dmi'
+	unavailable_to_build = 1
+	lifelike = 1
+	blood_color = "#00FFF"
+
 /datum/robolimb/wardtakahashi
 	company = "Ward-Takahashi"
 	desc = "This limb features sleek black and white polymers."
@@ -198,6 +206,9 @@ var/const/standard_monitor_styles = "blank=ipc_blank;\
 
 	nanotrasen
 		company = "NanoTrasen"
+
+	scorpius
+		company = "Scorpius"
 
 /obj/item/weapon/disk/limb/New(var/newloc)
 	..()
