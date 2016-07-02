@@ -849,3 +849,10 @@
 	desc = "A purple and wite uniform, specially designed for assistants with an eye for science."
 	icon_state = "eros_assistsci"
 	worn_state = "eros_assistsci"
+
+	/obj/item/clothing/under/miku
+	name = "Vocaloid Costume"
+	desc = "You feel cute just looking at this outfit."
+	icon_state = "miku"
+	worn_state = "miku_skirt"
+	item_state = "w_suit"

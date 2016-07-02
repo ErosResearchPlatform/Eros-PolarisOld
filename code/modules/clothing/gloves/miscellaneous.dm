@@ -57,3 +57,10 @@
 	name = "fingerless gloves"
 	icon_state = "eros_fingerlessgloves"
 	item_state = "eros_fingerlessgloves"
+
+/obj/item/clothing/gloves/miku
+	desc = "More of sleeves then gloves...still adorable though, go out there and dance!"
+	name = "Vocaloid Sleeves"
+	icon_state = "miku_boots"
+	item_state = "miku"
+
