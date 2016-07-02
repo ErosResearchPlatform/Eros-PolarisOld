@@ -853,6 +853,6 @@
 	/obj/item/clothing/under/miku
 	name = "Vocaloid Costume"
 	desc = "You feel cute just looking at this outfit."
-	icon_state = "miku"
-	worn_state = "miku_skirt"
+	icon_state = "miku_skirt_s"
+	worn_state = "miku_skirt_s"
 	item_state = "w_suit"
