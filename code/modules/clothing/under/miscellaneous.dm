@@ -835,8 +835,8 @@
 /obj/item/clothing/under/techassist
 	name = "technical assistant uniform"
 	desc = "A yellow and grey uniform, specially designed for assistants with a future in engineering."
-	icon_state = "eros_assistseng"
-	worn_state = "eros_assistseng"
+	icon_state = "eros_assisteng"
+	worn_state = "eros_assisteng"
 
 /obj/item/clothing/under/medintern
 	name = "medical intern uniform"
