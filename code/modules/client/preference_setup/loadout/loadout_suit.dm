@@ -150,11 +150,6 @@
 	path = /obj/item/clothing/suit/poncho/roles/cargo
 	allowed_roles = list("Quartermaster","Cargo Technician")
 
-/datum/gear/suit/roles/noirdetective
-	display_name = "noir detective coat"
-	path = /obj/item/clothing/suit/storage/noirdetective
-	allowed_roles = list("Detective")
-
 /datum/gear/suit/unathi_robe
 	display_name = "roughspun robe"
 	path = /obj/item/clothing/suit/unathi/robe
@@ -213,7 +208,7 @@
 /datum/gear/suit/wintercoat/security
 	display_name = "winter coat, security"
 	path = /obj/item/clothing/suit/storage/hooded/wintercoat/security
-	allowed_roles = list("Security Officer, Head of Security, Warden, Detective")
+	allowed_roles = list("Security Officer", "Head of Security", "Warden", "Detective")
 
 /datum/gear/suit/wintercoat/medical
 	display_name = "winter coat, medical"
@@ -274,9 +269,17 @@
 		tracks[initial(track.name)] = track
 	gear_tweaks += new/datum/gear_tweak/path(sortAssoc(tracks))
 
-/datum/gear/suit/puffer_coat
-	display_name = "puffer coat"
-	path = /obj/item/clothing/suit/jacket/puffer
+/datum/gear/suit/flannel
+	display_name = "grey flannel"
+	path = /obj/item/clothing/suit/storage/flannel
+
+/datum/gear/suit/flannel/red
+	display_name = "red flannel"
+	path = /obj/item/clothing/suit/storage/flannel/red
+
+/datum/gear/suit/flannel/aqua
+	display_name = "aqua flannel"
+	path = /obj/item/clothing/suit/storage/flannel/aqua
 
 /datum/gear/suit/colonel
 	display_name = "colonels jacket"
@@ -293,3 +296,8 @@
 /datum/gear/suit/lolitadress
 	display_name = "lolita dress"
 	path = /obj/item/clothing/suit/lolitadress
+
+/datum/gear/suit/roles/noirdetective
+	display_name = "noir detective coat"
+	path = /obj/item/clothing/suit/storage/noirdetective
+	allowed_roles = list("Detective")
