@@ -120,13 +120,13 @@ var/const/standard_monitor_styles = "blank=ipc_blank;\
 	lifelike = 1
 	blood_color = "#CCCCCC"
 
-/datum/robolimb/veymed
+/datum/robolimb/scorpius
 	company = "Scorpius"
 	desc = "This high quality limb is covered in thin layer of synth-fur."
 	icon = 'icons/mob/human_races/cyberlimbs/scorpius/scorpius_main.dmi'
 	unavailable_to_build = 1
 	lifelike = 1
-	blood_color = "#CCCCCC"
+	blood_color = "#00FFCC"
 
 /datum/robolimb/wardtakahashi
 	company = "Ward-Takahashi"
