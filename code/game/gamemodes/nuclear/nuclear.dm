@@ -14,8 +14,8 @@ var/list/nuke_disks = list()
 	config_tag = "mercenary"
 	required_players = 15
 	votable = 0
-	required_players_secret = 20 // 20 players - 5 players to be the nuke ops = 15 players remaining
-	required_enemies = 1
+	required_players_secret = 15	// High pop ideal for.. this gamemode...
+	required_enemies = 3
 	end_on_antag_death = 0
 	var/nuke_off_station = 0 //Used for tracking if the syndies actually haul the nuke to the station
 	var/syndies_didnt_escape = 0 //Used for tracking if the syndies got the shuttle off of the z-level

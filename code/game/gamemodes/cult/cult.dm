@@ -4,7 +4,7 @@
 	extended_round_description = "The station has been infiltrated by a fanatical group of death-cultists! They will use powers from beyond your comprehension to subvert you to their cause and ultimately please their gods through sacrificial summons and physical immolation! Try to survive!"
 	votable = 0
 	config_tag = "cult"
-	required_players = 5
+	required_players = 13
 	required_players_secret = 13
 	required_enemies = 3
 	end_on_antag_death = 0

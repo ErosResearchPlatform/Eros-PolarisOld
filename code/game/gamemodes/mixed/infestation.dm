@@ -4,8 +4,9 @@
 	extended_round_description = "Two alien antagonists (Cortical Borers or Changelings) spawn during this round."
 	votable = 0
 	config_tag = "infestation"
-	required_players = 15
-	required_enemies = 5
+	required_players = 12
+	required_players_secret = 12
+	required_enemies = 4
 	end_on_antag_death = 1
 	antag_tags = list(MODE_BORER, MODE_CHANGELING)
 	require_all_templates = 1

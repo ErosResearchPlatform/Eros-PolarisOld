@@ -3,9 +3,9 @@
 	round_description = "A space wizard and changelings have invaded the station!"
 	extended_round_description = "Changelings and a wizard spawn during this round."
 	config_tag = "lizard"
-	required_players = 2
+	required_players = 8
 	required_players_secret = 8
-	required_enemies = 3
+	required_enemies = 3	// Three min for chance at two lings, ideally.
 	end_on_antag_death = 0
 	antag_tags = list(MODE_TECHNOMANCER, MODE_CHANGELING)
 	require_all_templates = 1
