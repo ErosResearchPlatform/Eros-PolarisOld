@@ -13,21 +13,27 @@ var/global/list/limb_icon_cache = list()
 		overlays += organ.mob_icon
 
 /obj/item/organ/external/proc/sync_colour_to_human(var/mob/living/carbon/human/human)
+
 	s_col = null
 	h_col = null
 	if(robotic >= ORGAN_ROBOT)
 		return
 	if(species && human.species && species.name != human.species.name)
 		return
+
+
 	if(human.species.appearance_flags & HAS_SKIN_COLOR)
 		s_col = list(human.r_skin, human.g_skin, human.b_skin)
 	h_col = list(human.r_hair, human.g_hair, human.b_hair)
 
 /obj/item/organ/external/proc/sync_colour_to_dna()
+
 	s_col = null
 	h_col = null
 	if(robotic >= ORGAN_ROBOT)
 		return
+
+
 	if(species.appearance_flags & HAS_SKIN_COLOR)
 		s_col = list(dna.GetUIValue(DNA_UI_SKIN_R), dna.GetUIValue(DNA_UI_SKIN_G), dna.GetUIValue(DNA_UI_SKIN_B))
 	h_col = list(dna.GetUIValue(DNA_UI_HAIR_R),dna.GetUIValue(DNA_UI_HAIR_G),dna.GetUIValue(DNA_UI_HAIR_B))
@@ -36,10 +42,6 @@ var/global/list/limb_icon_cache = list()
 	..()
 	var/obj/item/organ/internal/eyes/eyes = owner.internal_organs_by_name[O_EYES]
 	if(eyes) eyes.update_colour()
-
-/obj/item/organ/external/head/removed()
-	get_icon()
-	..()
 
 /obj/item/organ/external/head/get_icon()
 
@@ -87,6 +89,8 @@ var/global/list/limb_icon_cache = list()
 	if(owner && owner.gender == MALE)
 		gender = "m"
 
+	icon_cache_key = "[icon_name]_[species ? species.name : "Human"]"
+
 	if(force_icon)
 		mob_icon = new /icon(force_icon, "[icon_name][gendered_icon ? "_[gender]" : ""]")
 	else
@@ -132,16 +136,26 @@ var/global/list/limb_icon_cache = list()
 			applying.SetIntensity(0.7)
 
 	else if(status & ORGAN_DEAD)
+		icon_cache_key += "_dead"
 		applying.ColorTone(rgb(10,50,0))
 		applying.SetIntensity(0.7)
 
+
+
+
+
+
+
 	if(s_col && s_col.len >= 3)
 		applying.Blend(rgb(s_col[1], s_col[2], s_col[3]), ICON_MULTIPLY)
+
 
 	// Translucency.
 	if(nonsolid) applying += rgb(,,,180) // SO INTUITIVE TY BYOND
 
 	return applying
+
+/obj/item/organ/external/var/icon_cache_key
 
 // new damage icon system
 // adjusted to set damage_state to brute/burn code only (without r_name0 as before)
@@ -151,3 +165,47 @@ var/global/list/limb_icon_cache = list()
 		damage_state = n_is
 		return 1
 	return 0
+
+// Returns an image for use by the human health dolly HUD element.
+// If the user has traumatic shock, it will be passed in as a minimum
+// damage amount to represent the pain of the injuries involved.
+
+// Global scope, used in code below.
+var/list/flesh_hud_colours = list("#02BA08","#9ECF19","#DEDE10","#FFAA00","#FF0000","#AA0000","#660000")
+var/list/robot_hud_colours = list("#CFCFCF","#AFAFAF","#8F8F8F","#6F6F6F","#4F4F4F","#2F2F2F","#000000")
+
+/obj/item/organ/external/proc/get_damage_hud_image(var/min_dam_state)
+
+	// Generate the greyscale base icon and cache it for later.
+	// icon_cache_key is set by any get_icon() calls that are made.
+	// This looks convoluted, but it's this way to avoid icon proc calls.
+	if(!hud_damage_image)
+		var/cache_key = "dambase-[icon_cache_key]"
+		if(!icon_cache_key || !limb_icon_cache[cache_key])
+			limb_icon_cache[cache_key] = icon(get_icon(), null, SOUTH)
+		var/image/temp = image(limb_icon_cache[cache_key])
+		if((robotic < ORGAN_ROBOT) && species)
+			// Calculate the required colour matrix.
+			var/r = 0.30 * species.health_hud_intensity
+			var/g = 0.59 * species.health_hud_intensity
+			var/b = 0.11 * species.health_hud_intensity
+			temp.color = list(r, r, r, g, g, g, b, b, b)
+		else if(model)
+			var/datum/robolimb/R = all_robolimbs[model]
+			if(istype(R))
+				var/r = 0.30 * R.health_hud_intensity
+				var/g = 0.59 * R.health_hud_intensity
+				var/b = 0.11 * R.health_hud_intensity
+				temp.color = list(r, r, r, g, g, g, b, b, b)
+		hud_damage_image = image(null)
+		hud_damage_image.overlays += temp
+
+	// Calculate the required color index.
+	var/dam_state = min(1,((brute_dam+burn_dam)/max_damage))
+	// Apply traumatic shock min damage state.
+	if(!isnull(min_dam_state) && dam_state < min_dam_state)
+		dam_state = min_dam_state
+	// Apply colour and return product.
+	var/list/hud_colours = (robotic < ORGAN_ROBOT) ? flesh_hud_colours : robot_hud_colours
+	hud_damage_image.color = hud_colours[max(1,min(ceil(dam_state*hud_colours.len),hud_colours.len))]
+	return hud_damage_image

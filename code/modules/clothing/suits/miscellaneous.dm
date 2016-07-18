@@ -720,3 +720,179 @@
 	item_state = "trackjacketwhite"
 	icon_open = "trackjacketwhite_open"
 	icon_closed = "trackjacketwhite"
+
+//Flannels
+
+/obj/item/clothing/suit/storage/flannel
+	name = "Flannel shirt"
+	desc = "A comfy, grey flannel shirt.  Unleash your inner hipster."
+	icon_state = "flannel"
+	item_state = "gy_suit"
+	var/rolled = 0
+	var/tucked = 0
+	var/buttoned = 0
+
+/obj/item/clothing/suit/storage/flannel/verb/roll_sleeves()
+	set name = "Roll Sleeves"
+	set category = "Object"
+	set src in usr
+	if(!istype(usr, /mob/living))
+		return
+	if(usr.stat)
+		return
+
+	if(rolled == 0)
+		rolled = 1
+		usr << "<span class='notice'>You roll up the sleeves of your [src].</span>"
+	else
+		rolled = 0
+		usr << "<span class='notice'>You roll down the sleeves of your [src].</span>"
+	update_icon()
+
+/obj/item/clothing/suit/storage/flannel/verb/tuck()
+	set name = "Toggle Shirt Tucking"
+	set category = "Object"
+	set src in usr
+	if(!istype(usr, /mob/living)||usr.stat)
+		return
+
+	if(tucked == 0)
+		tucked = 1
+		usr << "<span class='notice'>You tuck in your your [src].</span>"
+	else
+		tucked = 0
+		usr << "<span class='notice'>You untuck your [src].</span>"
+	update_icon()
+
+/obj/item/clothing/suit/storage/flannel/verb/button()
+	set name = "Toggle Shirt Buttons"
+	set category = "Object"
+	set src in usr
+	if(!istype(usr, /mob/living)||usr.stat)
+		return
+
+	if(buttoned == 0)
+		buttoned = 1
+		usr << "<span class='notice'>You unbutton your [src].</span>"
+	else
+		buttoned = 0
+		usr<<"<span class='notice'>You button your [src].</span>"
+	update_icon()
+
+/obj/item/clothing/suit/storage/flannel/update_icon()
+	icon_state = initial(icon_state)
+	if(rolled)
+		icon_state += "r"
+	if(tucked)
+		icon_state += "t"
+	if(buttoned)
+		icon_state += "b"
+
+/obj/item/clothing/suit/storage/flannel/red
+	desc = "A comfy, red flannel shirt.  Unleash your inner hipster."
+	icon_state = "flannel_red"
+	item_state = "r_suit"
+
+/obj/item/clothing/suit/storage/flannel/aqua
+	desc = "A comfy, aqua flannel shirt.  Unleash your inner hipster."
+	icon_state = "flannel_aqua"
+	item_state = "b_suit"
+
+
+//Eros
+
+/obj/item/clothing/suit/storage/noirdetective
+	name = "noir detective jacket"
+	desc = "For a working man."
+	icon_state = "eros_noir_detective"
+	item_state = "eros_noir_detective"
+
+/obj/item/clothing/suit/storage/colonel
+	name = "colonels jacket"
+	desc = "An authentic jacket worn by an infamous colonel."
+	icon_state = "eros_colonel"
+	item_state = "eros_colonel"
+
+/obj/item/clothing/suit/storage/cowboy
+	name = "brown cowboy vest"
+	desc = ""
+	icon_state = "eros_cowboyvest"
+	item_state = "eros_cowboyvest"
+
+/obj/item/clothing/suit/storage/cowboydark
+	name = "black cowboy vest"
+	desc = ""
+	icon_state = "eros_cowboyvest_dark"
+	item_state = "eros_cowboyvest_dark"
+
+/obj/item/clothing/suit/sweater
+	name = "sweater"
+	desc = "This sweater was knit with care and nothing's as comfy."
+
+/obj/item/clothing/suit/sweater/pink
+	name = "pink sweater"
+	desc = "This pink sweater was knit with care and nothing's as comfy."
+	icon_state = "eros_sweater_pink"
+	item_state = "eros_sweater_pink"
+
+/obj/item/clothing/suit/sweater/blue
+	name = "blue sweater"
+	desc = "This blue sweater was knit with care and nothing's as comfy."
+	icon_state = "eros_sweater_blue"
+	item_state = "eros_sweater_blue"
+
+/obj/item/clothing/suit/sweater/blueheart
+	name = "blue heart sweater"
+	desc = "This blue sweater was knit with care and nothing's as comfy. It has a cute heart on it."
+	icon_state = "eros_sweater_blueheart"
+	item_state = "eros_sweater_blueheart"
+
+/obj/item/clothing/suit/sweater/mint
+	name = "mint sweater"
+	desc = "This mint green sweater was knit with care and nothing's as comfy."
+	icon_state = "eros_sweater_mint"
+	item_state = "eros_sweater_mint"
+
+/obj/item/clothing/suit/sweater/nt
+	name = "NT sweater"
+	desc = "This sweater was knit with care and nothing's as comfy.It's NT themed."
+	icon_state = "eros_sweater_nt"
+	item_state = "eros_sweater_nt"
+
+/obj/item/clothing/suit/bow
+	name = "red gift bow"
+	desc = "Looks like someone's all wrapped up and ready to open..."
+	icon_state = "eros_bow"
+	item_state = "eros_bow"
+
+/obj/item/clothing/suit/maidapron
+	name = "maid apron"
+	desc = "Some unusual stains..."
+	icon_state = "eros_maidapron"
+	item_state = "eros_maidapron"
+
+/obj/item/clothing/suit/kigu
+	name = "kigurumi"
+	desc = "Cute and warm, good for naps and lazing around."
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS|HIDEEARS
+	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAIL|BLOCKHEADHAIR
+
+/obj/item/clothing/suit/kigu/bear
+	name = "bear kigurumi"
+	icon_state = "eros_kigubear"
+	item_state = "eros_kigubear"
+
+/obj/item/clothing/suit/kigu/corgi
+	name = "corgi kigurumi"
+	icon_state = "eros_kigucorgi"
+	item_state = "eros_kigucorgi"
+
+/obj/item/clothing/suit/kigu/cat
+	name = "cat kigurumi"
+	icon_state = "eros_kigucat"
+	item_state = "eros_kigucat"
+
+/obj/item/clothing/suit/lolitadress
+	name = "lolita dress"
+	icon_state = "eros_lolitadress"
+	item_state = "eros_lolitadress"

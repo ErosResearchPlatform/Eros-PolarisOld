@@ -71,8 +71,10 @@ datum/preferences
 		//Some faction information.
 	var/home_system = "Unset"           //System of birth.
 	var/citizenship = "None"            //Current home system.
-	var/faction = "None"                //Antag faction/general associated faction.
+	var/faction = "None"                //General associated faction.
 	var/religion = "None"               //Religious association.
+	var/antag_faction = "None"			//Antag associated faction.
+	var/antag_vis = "Hidden"			//How visible antag association is to others.
 
 		//Mob preview
 	var/icon/preview_icon = null
@@ -268,7 +270,10 @@ datum/preferences
 /datum/preferences/proc/copy_to(mob/living/carbon/human/character, icon_updates = 1)
 	// Sanitizing rather than saving as someone might still be editing when copy_to occurs.
 	player_setup.sanitize_setup()
+
+	// This needs to happen before anything else becuase it sets some variables.
 	character.set_species(species)
+	// Special Case: This references variables owned by two different datums, so do it here.
 	if(be_random_name)
 		real_name = random_name(identifying_gender,species)
 
@@ -403,13 +408,20 @@ datum/preferences
 		pdachoice = 1
 	character.pdachoice = pdachoice
 
+	// Ask the preferences datums to apply their own settings to the new mob
+	player_setup.copy_to_mob(character)
 	if(icon_updates)
 		character.force_update_limbs()
 		character.update_mutations(0)
 		character.update_body(0)
 		character.update_underwear(0)
 		character.update_hair(0)
+		character.update_genitals_showing(0)
+		character.update_wings(0)
+		character.update_ears(0)
+		character.update_collar(0)
 		character.update_icons()
+
 
 /datum/preferences/proc/open_load_dialog(mob/user)
 	var/dat = "<body>"

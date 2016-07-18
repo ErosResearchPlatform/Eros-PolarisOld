@@ -42,6 +42,12 @@ var/const/standard_monitor_styles = "blank=ipc_blank;\
 	var/list/species_cannot_use = list("Teshari")
 	var/list/monitor_styles			 		 			 //If empty, the model of limbs offers a head compatible with monitors.
 	var/parts = BP_ALL						 			 //Defines what parts said brand can replace on a body.
+	var/health_hud_intensity = 1						 // Intensity modifier for the health GUI indicator.
+
+/datum/robolimb/nanotrasen
+	company = "NanoTrasen"
+	desc = "A simple but efficient robotic limb, created by NanoTrasen."
+	icon = 'icons/mob/human_races/cyberlimbs/nanotrasen/nanotrasen_main.dmi'
 
 /datum/robolimb/bishop
 	company = "Bishop"
@@ -110,6 +116,14 @@ var/const/standard_monitor_styles = "blank=ipc_blank;\
 	company = "Vey-Med"
 	desc = "This high quality limb is nearly indistinguishable from an organic one."
 	icon = 'icons/mob/human_races/cyberlimbs/veymed/veymed_main.dmi'
+	unavailable_to_build = 1
+	lifelike = 1
+	blood_color = "#CCCCCC"
+
+/datum/robolimb/veymed
+	company = "Scorpius"
+	desc = "This high quality limb is covered in thin layer of synth-fur."
+	icon = 'icons/mob/human_races/cyberlimbs/scorpius/scorpius_main.dmi'
 	unavailable_to_build = 1
 	lifelike = 1
 	blood_color = "#CCCCCC"
@@ -190,6 +204,12 @@ var/const/standard_monitor_styles = "blank=ipc_blank;\
 
 	zenghu
 		company = "Zeng-Hu"
+
+	nanotrasen
+		company = "NanoTrasen"
+
+	scorpius
+		company = "Scorpius"
 
 /obj/item/weapon/disk/limb/New(var/newloc)
 	..()

@@ -10,9 +10,10 @@
 		secrets and deceptions. Every corner is a mystery. Every conversation is a lie. You will be facing your \
 		friends and family as they try to use your emotions and trust to their advantage, leaving you with nothing \
 		but the painful reminder that space is cruel and unforgiving."
+	votable = 0
 	config_tag = "traitor"
 	required_players = 0
-	required_players_secret = 5
+	required_players_secret = 8
 	required_enemies = 1
 	end_on_antag_death = 0
 	antag_tags = list(MODE_TRAITOR)
@@ -20,8 +21,9 @@
 
 /datum/game_mode/traitor/auto
 	name = "autotraitor"
+	votable = 0
 	config_tag = "autotraitor"
 	antag_tags = list(MODE_AUTOTRAITOR)
 	round_autoantag = 1
-	required_players_secret = 3
+	required_players_secret = 7
 	antag_scaling_coeff = 5

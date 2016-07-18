@@ -10,9 +10,10 @@
 		its existence is a threat to not only your personal safety but the lives of everyone on board. \
 		No one knows where it came from. No one knows who it is or what it wants. One thing is for \
 		certain though... there is never just one of them. Good luck."
+	votable = 0
 	config_tag = "changeling"
 	required_players = 2
-	required_players_secret = 5
+	required_players_secret = 8
 	required_enemies = 1
 	end_on_antag_death = 0
 	antag_scaling_coeff = 10

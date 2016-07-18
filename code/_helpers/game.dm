@@ -156,7 +156,7 @@
 // It will keep doing this until it checks every content possible. This will fix any problems with mobs, that are inside objects,
 // being unable to hear people due to being in a box within a bag.
 
-/proc/recursive_content_check(var/atom/O,  var/list/L = list(), var/recursion_limit = 3, var/client_check = 1, var/sight_check = 1, var/include_mobs = 1, var/include_objects = 1)
+/proc/recursive_content_check(var/atom/O,  var/list/L = list(), var/recursion_limit = 3, var/client_check = 1, var/sight_check = 1, var/include_mobs = 1, var/include_objects = 1, var/ignore_show_messages = 0)
 
 	if(!recursion_limit)
 		return L
@@ -176,7 +176,7 @@
 
 		else if(istype(I,/obj/))
 			var/obj/check_obj = I
-			if(check_obj.show_messages)
+			if(ignore_show_messages || check_obj.show_messages)
 				if(!sight_check || isInSight(I, O))
 					L |= recursive_content_check(I, L, recursion_limit - 1, client_check, sight_check, include_mobs, include_objects)
 					if(include_objects)
@@ -248,8 +248,11 @@
 					. |= M		// Since we're already looping through mobs, why bother using |= ? This only slows things down.
 	return .
 
-/proc/get_mobs_and_objs_in_view_fast(var/turf/T, var/range, var/checkghosts = 1)
-
+//Uses dview to quickly return mobs and objects in view,
+// then adds additional mobs or objects if they are in range 'smartly',
+// based on their presence in lists of players or registered objects
+// Type: 1-audio, 2-visual, 0-neither
+/proc/get_mobs_and_objs_in_view_fast(var/turf/T, var/range, var/type = 1)
 	var/list/mobs = list()
 	var/list/objs = list()
 
@@ -261,20 +264,29 @@
 			mobs += AM
 			hearturfs += AM.locs[1]
 		else if(isobj(AM))
-			objs += AM 
+			objs += AM
 			hearturfs += AM.locs[1]
 
-
+	//A list of every mob with a client
 	for(var/mob/M in player_list)
-		if(checkghosts && M.stat == DEAD && M.is_preference_enabled(/datum/client_preference/ghost_ears))
-			mobs |= M
-			continue
 		if(M.loc && M.locs[1] in hearturfs)
 			mobs |= M
 
+		else if(M.stat == DEAD)
+			switch(type)
+				if(1) //Audio messages use ghost_ears
+					if(M.is_preference_enabled(/datum/client_preference/ghost_ears))
+						mobs |= M
+				if(2) //Visual messages use ghost_sight
+					if(M.is_preference_enabled(/datum/client_preference/ghost_sight))
+						mobs |= M
+
+	//For objects below the top level who still want to hear
+	for(var/obj/O in listening_objects)
+		if(O.loc && O.locs[1] in hearturfs)
+			objs |= O
+
 	return list("mobs" = mobs, "objs" = objs)
-
-
 
 #define SIGN(X) ((X<0)?-1:1)
 

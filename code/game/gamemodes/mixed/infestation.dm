@@ -2,6 +2,7 @@
 	name = "Borers & Changelings"
 	round_description = "There's something in the walls!"
 	extended_round_description = "Two alien antagonists (Cortical Borers or Changelings) spawn during this round."
+	votable = 0
 	config_tag = "infestation"
 	required_players = 15
 	required_enemies = 5

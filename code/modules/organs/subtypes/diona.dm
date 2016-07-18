@@ -198,3 +198,13 @@
 
 /obj/item/organ/internal/diona/node/removed()
 	return
+
+/obj/item/organ/external/head/no_eyes/diona
+	max_damage = 50
+	min_broken_damage = 25
+	cannot_break = 1
+	amputation_point = "branch"
+	joint = "structural ligament"
+	dislocated = -1
+	vital = 0
+	slot_flags = SLOT_BELT

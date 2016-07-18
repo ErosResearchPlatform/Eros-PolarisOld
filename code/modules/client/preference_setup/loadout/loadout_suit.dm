@@ -208,7 +208,7 @@
 /datum/gear/suit/wintercoat/security
 	display_name = "winter coat, security"
 	path = /obj/item/clothing/suit/storage/hooded/wintercoat/security
-	allowed_roles = list("Security Officer, Head of Security, Warden, Detective")
+	allowed_roles = list("Security Officer", "Head of Security", "Warden", "Detective")
 
 /datum/gear/suit/wintercoat/medical
 	display_name = "winter coat, medical"
@@ -268,3 +268,36 @@
 		var/obj/item/clothing/suit/storage/toggle/track/track = track_style
 		tracks[initial(track.name)] = track
 	gear_tweaks += new/datum/gear_tweak/path(sortAssoc(tracks))
+
+/datum/gear/suit/flannel
+	display_name = "grey flannel"
+	path = /obj/item/clothing/suit/storage/flannel
+
+/datum/gear/suit/flannel/red
+	display_name = "red flannel"
+	path = /obj/item/clothing/suit/storage/flannel/red
+
+/datum/gear/suit/flannel/aqua
+	display_name = "aqua flannel"
+	path = /obj/item/clothing/suit/storage/flannel/aqua
+
+/datum/gear/suit/colonel
+	display_name = "colonels jacket"
+	path = /obj/item/clothing/suit/storage/colonel
+
+/datum/gear/suit/cowboy
+	display_name = "cowboy vest, brown"
+	path = /obj/item/clothing/suit/storage/cowboy
+
+/datum/gear/suit/cowboy2
+	display_name = "cowboy vest, black"
+	path = /obj/item/clothing/suit/storage/cowboydark
+
+/datum/gear/suit/lolitadress
+	display_name = "lolita dress"
+	path = /obj/item/clothing/suit/lolitadress
+
+/datum/gear/suit/roles/noirdetective
+	display_name = "noir detective coat"
+	path = /obj/item/clothing/suit/storage/noirdetective
+	allowed_roles = list("Detective")

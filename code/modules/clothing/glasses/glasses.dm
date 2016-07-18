@@ -46,8 +46,6 @@ BLIND     // can't see anything
 			active = 1
 			icon_state = initial(icon_state)
 			user.update_inv_glasses()
-			if(activation_sound)
-				usr << activation_sound
 			usr << "You activate the optical matrix on the [src]."
 		user.update_action_buttons()
 
@@ -326,3 +324,18 @@ BLIND     // can't see anything
 	desc = "A set of implantable lenses designed to augment your vision"
 	icon_state = "thermalimplants"
 	item_state = "syringe_kit"
+
+/obj/item/clothing/glasses/redglasses
+	name = "red glasses"
+	desc = "Classy red glasses."
+	icon_state = "eros_urimglasses"
+	item_state = "eros_urimglasses"
+	body_parts_covered = 0
+
+/obj/item/clothing/glasses/shutters
+	name = "shutter shades"
+	desc = "Block out the haters."
+	icon_state = "eros_hatablockahs"
+	item_state = "eros_hatablockahs"
+	body_parts_covered = 0
+

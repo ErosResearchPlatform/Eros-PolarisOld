@@ -13,6 +13,7 @@
 	name_language = null // Use the first-name last-name generator rather than a language scrambler
 	min_age = 18
 	max_age = 110
+	health_hud_intensity = 1.5
 
 	spawn_flags = SPECIES_CAN_JOIN
 	appearance_flags = HAS_HAIR_COLOR | HAS_SKIN_COLOR | HAS_LIPS | HAS_UNDERWEAR | HAS_EYE_COLOR
@@ -36,6 +37,7 @@
 	num_alternate_languages = 2
 	secondary_langs = list("Sinta'unathi")
 	name_language = "Sinta'unathi"
+	health_hud_intensity = 2.5
 
 	min_age = 18
 	max_age = 60
@@ -96,6 +98,7 @@
 	num_alternate_languages = 2
 	secondary_langs = list("Siik'tajr")
 	name_language = "Siik'tajr"
+	health_hud_intensity = 2.5
 
 	min_age = 18
 	max_age = 80
@@ -147,7 +150,7 @@
 	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/bite/sharp)
 	brute_mod = 1.15
 	burn_mod = 0.90
-	gluttonous = 2
+	gluttonous = 1
 	darksight = 4
 	num_alternate_languages = 2
 	secondary_langs = list("Skrellian")
@@ -192,6 +195,7 @@
 	num_alternate_languages = 2
 	secondary_langs = list("Skrellian", "Schechi")
 	name_language = "Skrellian"
+	health_hud_intensity = 2
 
 	min_age = 18
 	max_age = 80
@@ -234,6 +238,7 @@
 	show_ssd = "completely quiescent"
 	num_alternate_languages = 1
 	name_language = "Rootspeak"
+	health_hud_intensity = 2.5
 
 	min_age = 1
 	max_age = 300

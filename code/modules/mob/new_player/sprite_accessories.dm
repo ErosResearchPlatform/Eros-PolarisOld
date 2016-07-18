@@ -388,10 +388,6 @@
 		name = "Hime Cut"
 		icon_state = "hair_himecut"
 
-	braid
-		name = "Floorlength Braid"
-		icon_state = "bald" //Trust me, it's better this way.
-
 	mbraid
 		name = "Medium Braid"
 		icon_state = "hair_shortbraid"
@@ -720,6 +716,31 @@
 	taj_ears_messy
 		name = "Tajara Messy"
 		icon_state = "hair_messy"
+		species_allowed = list("Tajara")
+
+	taj_ears_curls
+		name = "Tajara Curly"
+		icon_state = "hair_curly"
+		species_allowed = list("Tajara")
+
+	taj_ears_wife
+		name = "Tajara Housewife"
+		icon_state = "hair_wife"
+		species_allowed = list("Tajara")
+
+	taj_ears_victory
+		name = "Tajara Victory Curls"
+		icon_state = "hair_victory"
+		species_allowed = list("Tajara")
+
+	taj_ears_bob
+		name = "Tajara Bob"
+		icon_state = "hair_tbob"
+		species_allowed = list("Tajara")
+
+	taj_ears_fingercurl
+		name = "Tajara Finger Curls"
+		icon_state = "hair_fingerwave"
 		species_allowed = list("Tajara")
 
 /datum/sprite_accessory/facial_hair
@@ -1233,3 +1254,17 @@
 	tal_deer
 		name = "Deer Tail"		// Citadel
 		icon_state = "deer"
+
+	tal_demon
+		name = "Demon Tail"
+		icon_state = "demon_c"
+
+	tal_demon_c
+		name = "Demon Tail, Red"
+		icon_state = "demon"
+		do_colouration = 0
+
+	tal_scorpius
+		name = "Scorpius FBP Tail"
+		icon_state = "scorpius"
+		do_colouration = 0

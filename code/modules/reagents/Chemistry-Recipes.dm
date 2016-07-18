@@ -622,7 +622,7 @@
 					if(istype(M:glasses, /obj/item/clothing/glasses/sunglasses))
 						continue
 
-				flick("e_flash", M.flash)
+				M.flash_eyes()
 				M.Weaken(15)
 
 			if(4 to 5)
@@ -630,7 +630,7 @@
 					if(istype(M:glasses, /obj/item/clothing/glasses/sunglasses))
 						continue
 
-				flick("e_flash", M.flash)
+				M.flash_eyes()
 				M.Stun(5)
 
 /datum/chemical_reaction/emp_pulse
@@ -1748,3 +1748,30 @@
 	required_reagents = list("hydrogen" = 2, "carbon" = 2, "ammonia" = 2)
 	result_amount = 6
 
+/datum/chemical_reaction/shirleytemple
+	name = "Shirley Temple"
+	id = "shirley_temple"
+	result = "shirley_temple"
+	required_reagents = list("lemon_lime" = 4, "grenadine" = 1)
+	result_amount = 5
+
+/datum/chemical_reaction/royrogers
+	name = "Roy Rogers"
+	id = "roy_rogers"
+	result = "roy_rogers"
+	required_reagents = list("cola" = 4, "grenadine" = 1)
+	result_amount = 5
+
+/datum/chemical_reaction/collinsmix
+	name = "Collins Mix"
+	id = "collins_mix"
+	result = "collins_mix"
+	required_reagents = list("lemon_lime" = 3, "sodawater" = 1)
+	result_amount = 4
+
+/datum/chemical_reaction/arnoldpalmer
+	name = "Arnold Palmer"
+	id = "arnold_palmer"
+	result = "arnold_palmer"
+	required_reagents = list("icetea" = 1, "lemonade" = 1)
+	result_amount = 2

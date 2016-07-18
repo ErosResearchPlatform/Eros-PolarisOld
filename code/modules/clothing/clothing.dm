@@ -8,7 +8,6 @@
 	var/list/valid_accessory_slots
 	var/list/restricted_accessory_slots
 	var/list/starting_accessories
-
 	/*
 		Sprites used when the clothing item is refit. This is done by setting icon_override.
 		For best results, if this is set then sprite_sheets should be null and vice versa, but that is by no means necessary.
@@ -212,11 +211,11 @@
 	siemens_coefficient = 0.75
 	var/wired = 0
 	var/obj/item/weapon/cell/cell = 0
-	var/clipped = 0
+	var/overgloves = 0
 	body_parts_covered = HANDS
 	slot_flags = SLOT_GLOVES
 	attack_verb = list("challenged")
-	species_restricted = list("exclude","Unathi","Tajara")
+	species_restricted = null
 	sprite_sheets = list(
 		"Teshari" = 'icons/mob/species/seromi/gloves.dmi',
 		)
@@ -238,7 +237,7 @@
 /obj/item/clothing/gloves/proc/Touch(var/atom/A, var/proximity)
 	return 0 // return 1 to cancel attack_hand()
 
-/obj/item/clothing/gloves/attackby(obj/item/weapon/W, mob/user)
+/*/obj/item/clothing/gloves/attackby(obj/item/weapon/W, mob/user)
 	if(istype(W, /obj/item/weapon/wirecutters) || istype(W, /obj/item/weapon/scalpel))
 		if (clipped)
 			user << "<span class='notice'>The [src] have already been clipped!</span>"
@@ -255,7 +254,7 @@
 			species_restricted -= "Unathi"
 			species_restricted -= "Tajara"
 		return
-
+*/
 ///////////////////////////////////////////////////////////////////////
 //Head
 /obj/item/clothing/head
@@ -406,7 +405,7 @@
 	slowdown = SHOES_SLOWDOWN
 	force = 2
 	var/overshoes = 0
-	species_restricted = list("exclude","Teshari", "Unathi","Tajara")
+	species_restricted = list("exclude","Teshari")
 	sprite_sheets = list(
 		"Teshari" = 'icons/mob/species/seromi/shoes.dmi',
 		)
@@ -505,6 +504,8 @@
 	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
 	w_class = 3
 	show_messages = 1
+	var/show_boobs = 0
+	var/show_genitals = 0
 
 	var/has_sensor = 1 //For the crew computer 2 = unable to change mode
 	var/sensor_mode = 0
@@ -670,10 +671,12 @@
 		body_parts_covered = initial(body_parts_covered)
 		body_parts_covered &= ~(UPPER_TORSO|ARMS)
 		item_state_slots[slot_w_uniform_str] = "[worn_state]_d"
+		show_boobs = 1
 		usr << "<span class='notice'>You roll down your [src].</span>"
 	else
 		body_parts_covered = initial(body_parts_covered)
 		item_state_slots[slot_w_uniform_str] = "[worn_state]"
+		show_boobs = 0
 		usr << "<span class='notice'>You roll up your [src].</span>"
 	update_clothing_icon()
 
@@ -707,3 +710,8 @@
 /obj/item/clothing/under/rank/New()
 	sensor_mode = pick(0,1,2,3)
 	..()
+
+/obj/item/clothing/suit
+	var/show_boobs = 0
+	var/show_genitals = 0
+	//preffered to put them here.

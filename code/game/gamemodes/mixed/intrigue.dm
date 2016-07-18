@@ -2,9 +2,10 @@
 	name = "Traitors & Ninja"
 	round_description = "Crewmembers are contacted by external elements while another infiltrates the colony."
 	extended_round_description = "Traitors and a ninja spawn during this round."
+	votable = 0
 	config_tag = "intrigue"
 	required_players = 6
-	required_players_secret = 8
+	required_players_secret = 9
 	required_enemies = 3
 	end_on_antag_death = 0
 	antag_tags = list(MODE_NINJA, MODE_AUTOTRAITOR)

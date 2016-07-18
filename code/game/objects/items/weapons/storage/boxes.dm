@@ -312,15 +312,6 @@
 	for(var/i = 1 to 7)
 		new /obj/item/clothing/glasses/regular(src)
 
-/obj/item/weapon/storage/box/drinkingglasses
-	name = "box of drinking glasses"
-	desc = "It has a picture of drinking glasses on it."
-
-/obj/item/weapon/storage/box/drinkingglasses/New()
-	..()
-	for(var/i = 1 to 7)
-		new /obj/item/weapon/reagent_containers/food/drinks/drinkingglass(src)
-
 /obj/item/weapon/storage/box/cdeathalarm_kit
 	name = "death alarm kit"
 	desc = "Box of stuff used to implant death alarms."
@@ -553,6 +544,22 @@
 	can_hold = list(/obj/item/organ, /obj/item/weapon/reagent_containers/food, /obj/item/weapon/reagent_containers/glass)
 	max_storage_space = 21
 	use_to_pickup = 1 // for picking up broken bulbs, not that most people will try
+
+/obj/item/weapon/storage/box/freezer/Entered(var/atom/movable/AM)
+	if(istype(AM, /obj/item/organ))
+		var/obj/item/organ/O = AM
+		O.preserved = 1
+		for(var/obj/item/organ/organ in O)
+			organ.preserved = 1
+	..()
+
+/obj/item/weapon/storage/box/freezer/Exited(var/atom/movable/AM)
+	if(istype(AM, /obj/item/organ))
+		var/obj/item/organ/O = AM
+		O.preserved = 0
+		for(var/obj/item/organ/organ in O)
+			organ.preserved = 0
+	..()
 
 /obj/item/weapon/storage/box/ambrosia
 	name = "ambrosia seeds box"

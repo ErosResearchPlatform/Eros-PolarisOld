@@ -93,6 +93,22 @@
 	attack_verb = list("attacked", "chopped", "cleaved", "torn", "cut")
 	applies_material_colour = 0
 
+/obj/item/weapon/material/twohanded/fireaxe/update_held_icon()
+	var/mob/living/M = loc
+	if(istype(M) && !issmall(M) && M.item_is_in_hands(src) && !M.hands_are_full())
+		wielded = 1
+		pry = 1
+		force = force_wielded
+		name = "[base_name] (wielded)"
+		update_icon()
+	else
+		wielded = 0
+		pry = 0
+		force = force_unwielded
+		name = "[base_name]"
+	update_icon()
+	..()
+
 /obj/item/weapon/material/twohanded/fireaxe/afterattack(atom/A as mob|obj|turf|area, mob/user as mob, proximity)
 	if(!proximity) return
 	..()
@@ -115,9 +131,9 @@
 	force = 10
 	w_class = 4.0
 	slot_flags = SLOT_BACK
-	force_wielded = 0.75           // 22 when wielded with hardness 15 (glass)
-	unwielded_force_divisor = 0.65 // 14 when unwielded based on above
-	thrown_force_divisor = 1.5 // 20 when thrown with weight 15 (glass)
+	force_divisor = 0.75 			// 22 when wielded with hardness 15 (glass)
+	unwielded_force_divisor = 0.375
+	thrown_force_divisor = 1.5 		// 20 when thrown with weight 15 (glass)
 	throw_speed = 3
 	edge = 0
 	sharp = 1
