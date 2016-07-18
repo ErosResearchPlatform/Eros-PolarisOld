@@ -397,6 +397,12 @@
 	icon_state = "militaryjacket_badge"
 	item_state = "militaryjacket_badge"
 
+/obj/item/clothing/suit/storage/miljacket/green
+	name = "military jacket"
+	desc = "A dark green canvas jacket. Feels sturdy, yet comfortable."
+	icon_state = "militaryjacket_green"
+	item_state = "militaryjacket_green"
+
 /obj/item/clothing/suit/storage/toggle/bomber
 	name = "bomber jacket"
 	desc = "A thick, well-worn WW2 leather bomber jacket."
