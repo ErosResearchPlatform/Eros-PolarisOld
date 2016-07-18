@@ -5,8 +5,8 @@
 	config_tag = "paranoia"
 	votable = 0
 	required_players = 2
-	required_players_secret = 14
-	required_enemies = 1
+	required_players_secret = 13 // Three antags, ten players?
+	required_enemies = 3
 	end_on_antag_death = 1
 	require_all_templates = 1
 	votable = 0

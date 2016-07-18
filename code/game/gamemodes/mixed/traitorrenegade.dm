@@ -6,7 +6,7 @@
 	votable = 0
 	required_players = 11			//I don't think we can have it lower and not need an ERT every round.
 	required_players_secret = 11	//I don't think we can have it lower and not need an ERT every round.
-	required_enemies = 4
+	required_enemies = 4			// This stays at four because ideally it's split even between tatortots and rens
 	end_on_antag_death = 0
 	antag_tags = list(MODE_AUTOTRAITOR, MODE_RENEGADE)
 	require_all_templates = 1

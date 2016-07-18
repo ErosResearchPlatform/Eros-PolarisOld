@@ -11,7 +11,7 @@
 	config_tag = "ninja"
 	required_players = 1
 	votable = 0
-	required_players_secret = 8
+	required_players_secret = 6
 	required_enemies = 1
 	end_on_antag_death = 0
 	antag_tags = list(MODE_NINJA)
