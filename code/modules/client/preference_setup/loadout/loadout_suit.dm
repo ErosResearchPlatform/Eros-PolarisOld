@@ -305,3 +305,7 @@
 	display_name = "noir detective coat"
 	path = /obj/item/clothing/suit/storage/noirdetective
 	allowed_roles = list("Detective")
+
+/datum/gear/suit/flannel/brown
+	display_name = "brown flannel"
+	path = /obj/item/clothing/suit/storage/flannel/brown
