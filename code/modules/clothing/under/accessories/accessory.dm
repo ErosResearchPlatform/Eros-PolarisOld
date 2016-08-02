@@ -3,7 +3,7 @@
 	desc = "A neosilk clip-on tie."
 	icon = 'icons/obj/clothing/ties.dmi'
 	icon_state = "bluetie"
-	item_state_slots = list(slot_r_hand_str = "", slot_l_hand_str = "")
+	item_state = ""	//no inhands
 	slot_flags = SLOT_TIE
 	w_class = 2.0
 	var/slot = "decor"
@@ -51,7 +51,7 @@
 
 	if(user)
 		user << "<span class='notice'>You attach \the [src] to \the [has_suit].</span>"
-		add_fingerprint(user)
+		src.add_fingerprint(user)
 
 /obj/item/clothing/accessory/proc/on_removed(var/mob/user)
 	if(!has_suit)
@@ -60,9 +60,9 @@
 	has_suit = null
 	if(user)
 		usr.put_in_hands(src)
-		add_fingerprint(user)
+		src.add_fingerprint(user)
 	else
-		forceMove(get_turf(src))
+		src.forceMove(get_turf(src))
 
 //default attackby behaviour
 /obj/item/clothing/accessory/attackby(obj/item/I, mob/user)
@@ -124,12 +124,6 @@
 	desc = "An outdated medical apparatus for listening to the sounds of the human body. It also makes you look like you know what you're doing."
 	icon_state = "stethoscope"
 
-/obj/item/clothing/accessory/stethoscope/do_surgery(mob/living/carbon/human/M, mob/living/user)
-	if(user.a_intent != I_HELP) //in case it is ever used as a surgery tool
-		return ..()
-	attack(M, user) //default surgery behaviour is just to scan as usual
-	return 1
-
 /obj/item/clothing/accessory/stethoscope/attack(mob/living/carbon/human/M, mob/living/user)
 	if(ishuman(M) && isliving(user))
 		if(user.a_intent == I_HELP)
@@ -178,6 +172,7 @@
 				user.visible_message("[user] places [src] against [M]'s [body_part] and listens attentively.", "You place [src] against [their] [body_part]. You [sound_strength] [sound].")
 				return
 	return ..(M,user)
+
 
 //Medals
 /obj/item/clothing/accessory/medal
@@ -355,3 +350,17 @@
 		user << "<span class='notice'>You set the [name]'s tag to '[str]'.</span>"
 		name = initial(name) + " ([str])"
 		desc = initial(desc) + " The tag says \"[str]\"."
+
+/obj/item/clothing/accessory/collar/horde // FOR HORDE!!!
+	name = "Locust Necklace"
+	desc = "A heavy peice of jewely, it's medalion constructed of dense gold and onyx, the immense chain connected to it appears to be made of a crude iron. This doesn't seem made for the average human...or any human for that matter."
+	slot_flags = SLOT_TIE | SLOT_OCLOTHING
+	icon_state = "horde"
+	item_state = "horde"
+
+/obj/item/clothing/accessory/collar/collar_iron //Fetishy~ :3
+	name = "Iron Collar"
+	desc = "A chunky iron restrait, looks like something from a medievil dungeon, a lengthy chain leads down a ways from it's clasp...why would anyone willingly wear this?"
+	slot_flags = SLOT_TIE | SLOT_OCLOTHING
+	icon_state = "collar_iron"
+	item_state = "collar_iron"

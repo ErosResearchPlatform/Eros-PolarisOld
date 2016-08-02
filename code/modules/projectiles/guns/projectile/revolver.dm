@@ -111,3 +111,15 @@
 	accuracy = -1 // smooth bore + short barrel = shit accuracy
 	ammo_type = /obj/item/ammo_casing/shotgun
 	// ToDo: Remove accuracy debuf in exchange for slightly injuring your hand every time you fire it.
+
+/obj/item/weapon/gun/projectile/revolver/boltok //Limited experiance in this area, sorry if it's messy or utterly fucked.
+	name = "\"Boltok Revolver\""
+	desc = "A massive double-action revolver crafted by and for nonhuman hands, this one seems to have been modified with a smaller caliber for human use.Modified and licensed by Scorpius Manufacturing. "
+	icon_state = "boltok"
+	force = 14.0
+	caliber = ".50"
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2, TECH_ILLEGAL = 4)
+	max_shells = 6
+	fire_sound = 'sound/weapons/deagle.ogg'
+	recoil = 1
+	ammo_type = /obj/item/ammo_casing/a50
