@@ -1029,7 +1029,6 @@
 					/obj/item/weapon/fluff/dildos/blue = 4,
 					/obj/item/weapon/fluff/fleshlight = 4,
 					/obj/item/weapon/fluff/bulletvibe = 4,
-					/obj/item/weapon/fluff/bulletvibe = 4,
 					/obj/item/weapon/storage/belt/strap_c = 2,
 					/obj/item/weapon/storage/belt/strap_h = 2,)
 
