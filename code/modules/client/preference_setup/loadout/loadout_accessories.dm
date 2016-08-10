@@ -239,3 +239,11 @@
 /datum/gear/accessory/collar/collar_holo
 	display_name = "collar, holo"
 	path = /obj/item/clothing/accessory/collar/collar_holo
+
+/datum/gear/accessory/collar/horde
+	display_name = "Locust Necklace"
+	path = /obj/item/clothing/accessory/collar/horde
+
+/datum/gear/accessory/collar/collar_iron
+	display_name = "Iron Collar"
+	path = /obj/item/clothing/accessory/collar/collar_iron
