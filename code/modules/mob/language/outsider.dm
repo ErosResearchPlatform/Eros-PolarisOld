@@ -64,3 +64,25 @@
 	colour = "cult"
 	key = "y"
 	flags = RESTRICTED | HIVEMIND
+
+/datum/language/spider
+	name = LANGUAGE_SPIDER
+	desc = "Spiderspeak, a high-pitched series of shrilling hisses."
+	speech_verb = "hisses"
+	ask_verb = "shrills"
+	exclaim_verb = "shrieks"
+	colour = "alien"
+	key = "9"
+	flags = RESTRICTED
+	syllables = list("SSSKssss","ssss","sssk","sskk","sssssss","SSSss","sssSSKKkk","sssSS","sSsskk")
+
+/datum/language/xenocommon
+	name = LANGUAGE_XENO
+	colour = "alien"
+	desc = "The common tongue of the xenomorphs."
+	speech_verb = "hisses"
+	ask_verb = "hisses"
+	exclaim_verb = "hisses"
+	key = "4"
+	flags = RESTRICTED
+	syllables = list("sss","sSs","SSS")
