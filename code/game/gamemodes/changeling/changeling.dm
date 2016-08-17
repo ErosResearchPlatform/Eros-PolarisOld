@@ -12,9 +12,9 @@
 		certain though... there is never just one of them. Good luck."
 	votable = 0
 	config_tag = "changeling"
-	required_players = 7
-	required_players_secret = 7
-	required_enemies = 2	// Let's get a hivemind going on here.
+	required_players = 2
+	required_players_secret = 2
+	required_enemies = 1
 	end_on_antag_death = 0
 	antag_scaling_coeff = 10
 	antag_tags = list(MODE_CHANGELING)

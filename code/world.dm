@@ -131,25 +131,22 @@ var/world_topic_spam_protect_time = world.timeofday
 /world/Topic(T, addr, master, key)
 	diary << "TOPIC: \"[T]\", from:[addr], master:[master], key:[key][log_end]"
 
-	var/list/input = params2list(T)
-	var/key_valid = (config.comms_password && input["key"] == config.comms_password)
-
-	if("ping" in input)
+	if (T == "ping")
 		var/x = 1
 		for (var/client/C)
 			x++
 		return x
 
-	else if("players" in input)
+	else if(T == "players")
 		var/n = 0
 		for(var/mob/M in player_list)
 			if(M.client)
 				n++
 		return n
 
-	else if("status" in input)
+	else if (copytext(T,1,7) == "status")
+		var/input[] = params2list(T)
 		var/list/s = list()
-		var/list/admins = list()
 		s["version"] = game_version
 		s["mode"] = master_mode
 		s["respawn"] = config.abandon_allowed
@@ -157,37 +154,45 @@ var/world_topic_spam_protect_time = world.timeofday
 		s["vote"] = config.allow_vote_mode
 		s["ai"] = config.allow_ai
 		s["host"] = host ? host : null
-		s["players"] = list()
-		s["stationtime"] = worldtime2text()
-		s["roundduration"] = round_duration_as_text()
 
-		var/player_count = 0
-		var/admin_count = 0
-		for(var/client/C in clients)
-			if(C.holder)
-				if(C.holder.fakekey)
-					continue
-				admin_count++
-				admins += list(list(C.key, C.holder.rank))
-			s["player[player_count]"] = C.key
-			player_count++
-		s["players"] = player_count
-		s["admins"] = admin_count
+		// This is dumb, but spacestation13.com's banners break if player count isn't the 8th field of the reply, so... this has to go here.
+		s["players"] = 0
+		s["stationtime"] = stationtime2text()
+		s["roundduration"] = roundduration2text()
 
-		if(key_valid)
-			if(ticker && ticker.mode)
-				s["real_mode"] = ticker.mode.name
+		if(input["status"] == "2")
+			var/list/players = list()
+			var/list/admins = list()
 
-			s["security_level"] = get_security_level()
+			for(var/client/C in clients)
+				if(C.holder)
+					if(C.holder.fakekey)
+						continue
+					admins[C.key] = C.holder.rank
+				players += C.key
 
-			for(var/i in 1 to admins.len)
-				var/list/A = admins[i]
-				s["admin[i - 1]"] = A[1]
-				s["adminrank[i - 1]"] = A[2]
+			s["players"] = players.len
+			s["playerlist"] = list2params(players)
+			s["admins"] = admins.len
+			s["adminlist"] = list2params(admins)
+		else
+			var/n = 0
+			var/admins = 0
+
+			for(var/client/C in clients)
+				if(C.holder)
+					if(C.holder.fakekey)
+						continue	//so stealthmins aren't revealed by the hub
+					admins++
+				s["player[n]"] = C.key
+				n++
+
+			s["players"] = n
+			s["admins"] = admins
 
 		return list2params(s)
 
-	else if("manifest" in input)
+	else if(T == "manifest")
 		var/list/positions = list()
 		var/list/set_names = list(
 				"heads" = command_positions,
@@ -217,17 +222,30 @@ var/world_topic_spam_protect_time = world.timeofday
 					positions["misc"] = list()
 				positions["misc"][name] = rank
 
-		return json_encode(positions)
+		for(var/k in positions)
+			positions[k] = list2params(positions[k]) // converts positions["heads"] = list("Bob"="Captain", "Bill"="CMO") into positions["heads"] = "Bob=Captain&Bill=CMO"
 
-	else if("revision" in input)
+		return list2params(positions)
+
+	else if(T == "revision")
 		if(revdata.revision)
 			return list2params(list(branch = revdata.branch, date = revdata.date, revision = revdata.revision))
 		else
 			return "unknown"
 
-	else if("info" in input)
-		if(!key_valid)
-			return keySpamProtect(addr)
+	else if(copytext(T,1,5) == "info")
+		var/input[] = params2list(T)
+		if(input["key"] != config.comms_password)
+			if(world_topic_spam_protect_ip == addr && abs(world_topic_spam_protect_time - world.time) < 50)
+
+				spawn(50)
+					world_topic_spam_protect_time = world.time
+					return "Bad Key (Throttled)"
+
+			world_topic_spam_protect_time = world.time
+			world_topic_spam_protect_ip = addr
+
+			return "Bad Key"
 
 		var/list/search = params2list(input["info"])
 		var/list/ckeysearch = list()
@@ -292,7 +310,7 @@ var/world_topic_spam_protect_time = world.timeofday
 				ret[M.key] = M.name
 			return list2params(ret)
 
-	else if("adminmsg" in input)
+	else if(copytext(T,1,9) == "adminmsg")
 		/*
 			We got an adminmsg from IRC bot lets split the input then validate the input.
 			expected output:
@@ -301,8 +319,20 @@ var/world_topic_spam_protect_time = world.timeofday
 				3. validatationkey = the key the bot has, it should match the gameservers commspassword in it's configuration.
 				4. sender = the ircnick that send the message.
 		*/
-		if(!key_valid)
-			return keySpamProtect(addr)
+
+
+		var/input[] = params2list(T)
+		if(input["key"] != config.comms_password)
+			if(world_topic_spam_protect_ip == addr && abs(world_topic_spam_protect_time - world.time) < 50)
+
+				spawn(50)
+					world_topic_spam_protect_time = world.time
+					return "Bad Key (Throttled)"
+
+			world_topic_spam_protect_time = world.time
+			world_topic_spam_protect_ip = addr
+
+			return "Bad Key"
 
 		var/client/C
 		var/req_ckey = ckey(input["adminmsg"])
@@ -334,21 +364,38 @@ var/world_topic_spam_protect_time = world.timeofday
 
 		return "Message Successful"
 
-	else if("notes" in input)
+	else if(copytext(T,1,6) == "notes")
 		/*
 			We got a request for notes from the IRC Bot
 			expected output:
 				1. notes = ckey of person the notes lookup is for
 				2. validationkey = the key the bot has, it should match the gameservers commspassword in it's configuration.
 		*/
-		if(!key_valid)
-			return keySpamProtect(addr)
+		var/input[] = params2list(T)
+		if(input["key"] != config.comms_password)
+			if(world_topic_spam_protect_ip == addr && abs(world_topic_spam_protect_time - world.time) < 50)
+
+				spawn(50)
+					world_topic_spam_protect_time = world.time
+					return "Bad Key (Throttled)"
+
+			world_topic_spam_protect_time = world.time
+			world_topic_spam_protect_ip = addr
+			return "Bad Key"
 
 		return show_player_info_irc(ckey(input["notes"]))
 
-	else if("age" in input)
-		if(!key_valid)
-			return keySpamProtect(addr)
+	else if(copytext(T,1,4) == "age")
+		var/input[] = params2list(T)
+		if(input["key"] != config.comms_password)
+			if(world_topic_spam_protect_ip == addr && abs(world_topic_spam_protect_time - world.time) < 50)
+				spawn(50)
+					world_topic_spam_protect_time = world.time
+					return "Bad Key (Throttled)"
+
+			world_topic_spam_protect_time = world.time
+			world_topic_spam_protect_ip = addr
+			return "Bad Key"
 
 		var/age = get_player_age(input["age"])
 		if(isnum(age))
@@ -358,17 +405,6 @@ var/world_topic_spam_protect_time = world.timeofday
 				return "Ckey not found"
 		else
 			return "Database connection failed or not set up"
-
-
-/proc/keySpamProtect(var/addr)
-	if(world_topic_spam_protect_ip == addr && abs(world_topic_spam_protect_time - world.time) < 50)
-		spawn(50)
-			world_topic_spam_protect_time = world.time
-			return "Bad Key (Throttled)"
-
-	world_topic_spam_protect_time = world.time
-	world_topic_spam_protect_ip = addr
-	return "Bad Key"
 
 
 /world/Reboot(var/reason)

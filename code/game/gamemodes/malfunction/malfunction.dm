@@ -4,8 +4,8 @@
 	extended_round_description = "The AI will attempt to hack the APCs around the station in order to gain as much control as possible."
 	votable = 0
 	config_tag = "malfunction"
-	required_players = 7
-	required_players_secret = 7
+	required_players = 4
+	required_players_secret = 4
 	required_enemies = 1
 	end_on_antag_death = 0
 	auto_recall_shuttle = 0
