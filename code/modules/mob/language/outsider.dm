@@ -66,6 +66,7 @@
 	flags = RESTRICTED | HIVEMIND
 
 /datum/language/spider
+	name = "Spiderspeak"
 	desc = "Spiderspeak, a high-pitched series of shrilling hisses."
 	speech_verb = "hisses"
 	ask_verb = "shrills"
@@ -76,6 +77,7 @@
 	syllables = list("SSSKssss","ssss","sssk","sskk","sssssss","SSSss","sssSSKKkk","sssSS","sSsskk")
 
 /datum/language/xenocommon
+	name = "Xeno"
 	colour = "alien"
 	desc = "The common tongue of the xenomorphs."
 	speech_verb = "hisses"
