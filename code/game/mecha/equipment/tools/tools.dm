@@ -983,7 +983,7 @@
 //Works like a charm on my local testing. - Fairedan :3
 /obj/item/mecha_parts/mecha_equipment/jetpack
 	name = "jetpack"
-	desc = "Using directed ion bursts and cunning solar wind reflection technique, this device enables controlled space flight."
+	desc = "Using directed ion bursts and cunning solar wind reflection technique, this device enables controlled space flight.Licensed from Scorpius Manifacturies."
 	icon_state = "mecha_equip"
 	equip_cooldown = 5
 	energy_drain = 50
