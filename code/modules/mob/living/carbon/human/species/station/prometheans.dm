@@ -24,6 +24,7 @@ var/datum/species/shapeshifter/promethean/prometheans
 	appearance_flags = HAS_SKIN_COLOR | HAS_EYE_COLOR | HAS_HAIR_COLOR | RADIATION_GLOWS | HAS_UNDERWEAR
 	spawn_flags =      SPECIES_CAN_JOIN
 	health_hud_intensity = 2
+	num_alternate_languages = 2
 
 	breath_type = null
 	poison_type = null
@@ -32,11 +33,11 @@ var/datum/species/shapeshifter/promethean/prometheans
 	virus_immune =          1
 	blood_volume =          600
 	min_age =               18
-	max_age =               30
-	brute_mod =             0.5
-	burn_mod =              2
+	max_age =               40
+	brute_mod =             0.75
+	burn_mod =              1.5
 	oxy_mod =               0
-	total_health =          120
+	slowdown =            - 0.5
 
 	cold_level_1 =          260
 	cold_level_2 =          200
@@ -79,7 +80,7 @@ var/datum/species/shapeshifter/promethean/prometheans
 	valid_transform_species = list("Human", "Unathi", "Tajara", "Skrell", "Diona", "Teshari", "Akula")
 	monochromatic = 1
 
-	var/heal_rate = 5 // Temp. Regen per tick.
+	var/heal_rate = 3 // Temp. Regen per tick.
 
 /datum/species/shapeshifter/promethean/New()
 	..()

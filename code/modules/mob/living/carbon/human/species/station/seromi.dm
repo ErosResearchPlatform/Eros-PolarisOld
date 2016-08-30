@@ -27,9 +27,8 @@
 	blood_mask = 'icons/mob/human_races/masks/blood_seromi.dmi'
 
 	slowdown = -1
-	total_health = 50
-	brute_mod = 1.35
-	burn_mod =  1.35
+	total_health = 75
+	brute_mod = 1.5
 	mob_size = MOB_SMALL
 	holder_type = /obj/item/weapon/holder/human
 	short_sighted = 1
