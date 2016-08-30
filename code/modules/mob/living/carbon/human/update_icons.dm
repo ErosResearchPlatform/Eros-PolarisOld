@@ -1095,7 +1095,7 @@ var/global/list/damage_icon_parts = list()
 /mob/living/carbon/human/proc/update_tail_showing(var/update_icons=1)
 	overlays_standing[TAIL_LAYER] = null
 
-	if(species.appearance_flags & HAS_UNDERWEAR) //change has underwear to a more sane flag when needed
+	if(species.appearance_flags & HAS_BIOMODS) //change has underwear to a more sane flag when needed
 		var/icon/tail_standing	=new /icon('icons/mob/human_face.dmi',"bald_s")
 		var/datum/sprite_accessory/tail = body_tails_list[tail_type]
 		if (wear_suit && wear_suit.flags_inv & HIDETAIL)
@@ -1112,7 +1112,7 @@ var/global/list/damage_icon_parts = list()
 
 /mob/living/carbon/human/proc/update_ears(var/update_icons=1)
 	overlays_standing[NATURAL_EARS_LAYER] = null
-	if(species.appearance_flags & HAS_UNDERWEAR) //change to different flag when justified.
+	if(species.appearance_flags & HAS_BIOMODS) //change to different flag when justified.
 		var/icon/ears_standing	=new /icon('icons/mob/human_face.dmi',"bald_s")
 		var/datum/sprite_accessory/ears = body_ears_list[ears_type]
 		if( (head && (head.flags_inv & (BLOCKHAIR | BLOCKHEADHAIR))) || (wear_mask && (wear_mask.flags_inv & (BLOCKHAIR | BLOCKHEADHAIR))))
@@ -1129,7 +1129,7 @@ var/global/list/damage_icon_parts = list()
 
 /mob/living/carbon/human/proc/update_wings(var/update_icons=1)
 	overlays_standing[WINGS_LAYER] = null
-	if(species.appearance_flags & HAS_UNDERWEAR) //change to different flag when justified.
+	if(species.appearance_flags & HAS_BIOMODS) //change to different flag when justified.
 		var/icon/wings_standing	=new /icon('icons/mob/human_face.dmi',"bald_s")
 		var/datum/sprite_accessory/wings = body_wings_list[wings_type]
 		if(wings && wings.species_allowed && (src.species.get_bodytype() in wings.species_allowed))

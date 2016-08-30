@@ -1067,7 +1067,7 @@
 		name = "None"
 		icon = null
 		icon_state = null
-		species_allowed = list("Human","Unathi","Tajara","Skrell","Vox","Machine","Akula","Lamia")
+		species_allowed = list("Human","Unathi","Tajara","Skrell","Machine","Akula","Lamia", "Teshari")
 
 	ear_bear
 		name = "Bear Ears"
@@ -1184,7 +1184,7 @@
 		name = "None"
 		icon = null
 		icon_state = null
-		species_allowed = list("Human","Unathi","Tajara","Skrell","Vox","Machine","Akula","Lamia")
+		species_allowed = list("Human","Unathi","Tajara","Skrell", "Machine","Akula","Lamia", "Teshari")
 
 	wng_angel
 		name = "Angel Wings"
@@ -1227,6 +1227,10 @@
 		name = "Deathclaw Spines"
 		icon_state = "deathclawspines"
 
+	wng_seromi
+		name = "Teshari Feathers"
+		icon_state = "seromi"
+		species_allowed = list("Teshari")
 
 /*
 ///////////////////////////////
@@ -1244,7 +1248,7 @@
 		name = "None"
 		icon = null
 		icon_state = null
-		species_allowed = list("Human","Unathi","Tajara","Skrell","Vox","Machine","Akula")
+		species_allowed = list("Human","Unathi","Tajara","Skrell", "Machine","Akula", "Teshari")
 
 	tal_bunny
 		name = "Bunny Tail"
@@ -1366,3 +1370,8 @@
 		name = "Scorpius FBP Tail"
 		icon_state = "scorpius"
 		do_colouration = 0
+
+	tal_seromi
+		name = "Teshari Tail"
+		icon_state = "seromi"
+		species_allowed = list("Teshari")
