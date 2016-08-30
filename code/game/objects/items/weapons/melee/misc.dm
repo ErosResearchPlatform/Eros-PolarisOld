@@ -21,6 +21,7 @@
 	icon_state = "bigblackdick"
 	item_state = "bigblackdick"
 	attack_verb = list("fucked", "probed", "violated", "teased", "prodded")
+	w_class = 1
 
 /obj/item/weapon/fluff/dildos/metal_dildo
 	name = "metal dildo"
@@ -29,6 +30,7 @@
 	icon_state = "metal_dildo"
 	item_state = "metal_dildo"
 	attack_verb = list("fucked", "probed", "violated", "teased", "prodded")
+	w_class = 1
 
 /obj/item/weapon/fluff/dildos/canine
 	name = "canine dildo"
@@ -37,6 +39,7 @@
 	icon_state = "canine"
 	item_state = "canine"
 	attack_verb = list("fucked", "probed", "violated", "teased", "prodded")
+	w_class = 1
 
 /obj/item/weapon/fluff/dildos/floppydick
 	name = "floppy dick"
@@ -45,6 +48,7 @@
 	icon_state = "floppydick"
 	item_state = "floppydick"
 	attack_verb = list("fucked", "probed", "violated", "teased", "prodded")
+	w_class = 1
 
 /obj/item/weapon/fluff/dildos/purpledong
 	name = "purple dildo"
@@ -53,6 +57,7 @@
 	icon_state = "purple-dong"
 	item_state = "purple-dong"
 	attack_verb = list("fucked", "probed", "violated", "teased", "prodded")
+	w_class = 1
 
 /obj/item/weapon/fluff/dildos/blue
 	name = "blue dildo"
@@ -61,6 +66,7 @@
 	icon_state = "blue"
 	item_state = "blue"
 	attack_verb = list("fucked", "probed", "violated", "teased", "prodded")
+	w_class = 1
 
 /obj/item/weapon/fluff/dildos/uglyhorse
 	name = "equine dildo"
@@ -69,6 +75,7 @@
 	icon_state = "uglyhorse"
 	item_state = "uglyhorse"
 	attack_verb = list("fucked", "probed", "violated", "teased", "prodded")
+	w_class = 1
 
 /obj/item/weapon/fluff/dildos/attack_self(mob/user as mob)
 	if(user.a_intent == I_HELP)
@@ -87,6 +94,7 @@
 	icon_state = "fleshlight"
 	item_state = "fleshlight"
 	attack_verb = list("cuntslapped", "violated", "teased", "prodded")
+	w_class = 1
 
 /obj/item/weapon/fluff/bulletvibe
 	name = "bullet vibrator"
@@ -95,3 +103,4 @@
 	icon_state = "bulletvibe"
 	item_state = "bulletvibe"
 	attack_verb = list("pleasured", "vibrated", "violated", "teased", "poked")
+	w_class = 1
