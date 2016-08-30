@@ -835,7 +835,7 @@
 		name = "None"
 		icon = null
 		icon_state = null
-		species_allowed = list("Human","Unathi","Tajara","Skrell","Vox","Machine","Akula","Lamia")
+		species_allowed = list("Human","Unathi","Tajara","Skrell","Vox","Machine","Akula","Lamia", "Promethean")
 
 	dik_normal
 		name = "Normal Dick"
@@ -872,6 +872,21 @@
 	dik_tentacle2
 		name = "Tentacle Big Dicks"
 		icon_state = "tentacle_big"
+
+	dik_normal_slime
+		name = "Slime Normal Dick"
+		icon_state = "normal_slime"
+		species_allowed = list ("Promethean")
+
+	dik_small_slime
+		name = "Slime Small Dick"
+		icon_state = "small_slime"
+		species_allowed = list ("Promethean")
+
+	dik_big2_slime
+		name = "Slime Bigger Dick"
+		icon_state = "big2_slime"
+		species_allowed = list ("Promethean")
 
 	dik_amputed
 		name = "Amputed Dick"
@@ -944,7 +959,7 @@
 		name = "None"
 		icon = null
 		icon_state = null
-		species_allowed = list("Human","Unathi","Tajara","Skrell","Vox","Machine","Akula","Lamia")
+		species_allowed = list("Human","Unathi","Tajara","Skrell","Vox","Machine","Akula","Lamia", "Promethean")
 
 	vag_normal
 		name = "Normal Vagina"
@@ -967,6 +982,21 @@
 		icon_state = "dentata"
 		do_colouration = 0
 
+	vag_normal_slime
+		name = "Slime Normal Vagina"
+		icon_state = "normal_slime"
+		species_allowed = list ("Promethean")
+
+	vag_gaping_slime
+		name = "Slime Gaping Vagina"
+		icon_state = "gaping_slime"
+		species_allowed = list ("Promethean")
+
+	vag_dripping_slime
+		name = "Slime Dripping Vagina"
+		icon_state = "dripping_slime"
+		species_allowed = list ("Promethean")
+
 /*
 ///////////////////////////////
 /  =-----------------------=  /
@@ -983,7 +1013,7 @@
 		name = "None"
 		icon = null
 		icon_state = null
-		species_allowed = list("Human","Unathi","Tajara","Skrell","Vox","Machine","Akula","Lamia")
+		species_allowed = list("Human","Unathi","Tajara","Skrell","Vox","Machine","Akula","Lamia", "Promethean")
 
 	brt_normala
 		name = "Tiny Breasts"
@@ -1004,6 +1034,32 @@
 	brt_normale
 		name = "Very Big Breasts"
 		icon_state = "normal_e"
+
+	brt_slimea
+		name = "Slime Tiny Breasts"
+		icon_state = "slime_a"
+		species_allowed = list ("Promethean")
+
+	brt_slimeb
+		name = "Slime Small Breasts"
+		icon_state = "slime_b"
+		species_allowed = list ("Promethean")
+
+	brt_slimec
+		name = "Slime Normal Breasts"
+		icon_state = "slime_c"
+		species_allowed = list ("Promethean")
+
+	brt_slimed
+		name = "Slime Big Breasts"
+		icon_state = "slime_d"
+		species_allowed = list ("Promethean")
+
+	brt_slimee
+		name = "Slime Very Big Breasts"
+		icon_state = "slime_e"
+		species_allowed = list ("Promethean")
+
 
 	brt_bishop
 		name = "Bishop Synthbreasts"
