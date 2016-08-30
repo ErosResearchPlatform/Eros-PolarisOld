@@ -110,15 +110,15 @@ Please contact me on #coderbus IRC. ~Carn x
 #define DAMAGE_LAYER			2
 #define SURGERY_LEVEL			3		//bs12 specific.
 #define UNDERWEAR_LAYER 		4
-#define TAIL_LAYER				5		//bs12 specific. this hack is probably gonna come back to haunt me
-#define GENITALS_LAYER			6		//eros specific.
-#define UNIFORM_LAYER			7
-#define ID_LAYER				8
-#define SHOES_LAYER				9
-#define GLOVES_LAYER			10
-#define BELT_LAYER				11
-#define SUIT_LAYER				12
-#define ORGAN_OVERLAY_LAYER		13		//for any organs that are bigger than a standard human (Blend() crops images)
+#define GENITALS_LAYER			5		//eros specific.
+#define UNIFORM_LAYER			6
+#define ID_LAYER				7
+#define SHOES_LAYER				8
+#define GLOVES_LAYER			9
+#define BELT_LAYER				10
+#define SUIT_LAYER				11
+#define ORGAN_OVERLAY_LAYER		12		//for any organs that are bigger than a standard human (Blend() crops images)
+#define TAIL_LAYER				13		//bs12 specific. this hack is probably gonna come back to haunt me //this is now eros too
 #define WINGS_LAYER				14		//eros specific.
 #define GLASSES_LAYER			15
 #define BELT_LAYER_ALT			16
