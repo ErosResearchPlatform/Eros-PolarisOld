@@ -878,6 +878,56 @@
 		icon_state = "amputed"
 		do_colouration = 0
 
+	dik_bishop
+		name = "Bishop Synthpenis"
+		icon_state = "robo-bishop"
+		do_colouration = 0
+
+	dik_hesphiastos
+		name = "Hesphiastos Synthpenis"
+		icon_state = "robo-hesphiastos"
+		do_colouration = 0
+
+	dik_morpheus
+		name = "Morpheus Synthpenis"
+		icon_state = "robo-morpheus"
+		do_colouration = 0
+
+	dik_wardtakahashi
+		name = "Ward-Takahashi Synthpenis"
+		icon_state = "robo-wardtakahashi"
+		do_colouration = 0
+
+	dik_zenghu
+		name = "Zeng-hu Synthpenis"
+		icon_state = "robo-zenghu"
+		do_colouration = 0
+
+	dik_xion
+		name = "Xion Synthpenis"
+		icon_state = "robo-xion"
+		do_colouration = 0
+
+	dik_nt
+		name = "NanoTrasen Synthpenis"
+		icon_state = "robo-nanotrasen"
+		do_colouration = 0
+
+	dik_morpheus
+		name = "Morpheus Synthpenis"
+		icon_state = "robo-morpheus"
+		do_colouration = 0
+
+	dik_scorpius
+		name = "Scorpius Synthpenis"
+		icon_state = "robo-scorpius"
+		do_colouration = 0
+
+	dik_unbranded
+		name = "Unbranded Synthpenis"
+		icon_state = "robo-unbranded"
+		do_colouration = 0
+
 /*
 //////////////////////////////
 /  =----------------------=  /
@@ -954,6 +1004,51 @@
 	brt_normale
 		name = "Very Big Breasts"
 		icon_state = "normal_e"
+
+	brt_bishop
+		name = "Bishop Synthbreasts"
+		icon_state = "robo-bishop"
+		do_colouration = 0
+
+	brt_hesphiastos
+		name = "Hesphiastos Synthbreasts"
+		icon_state = "robo-hesphiastos"
+		do_colouration = 0
+
+	brt_wardtakahashi
+		name = "Ward-Takahashi Synthbreasts"
+		icon_state = "robo-wardtakahashi"
+		do_colouration = 0
+
+	brt_zenghu
+		name = "Zeng-hu Synthbreasts"
+		icon_state = "robo-zenghu"
+		do_colouration = 0
+
+	brt_xion
+		name = "Xion Synthbreasts"
+		icon_state = "robo-xion"
+		do_colouration = 0
+
+	brt_nt
+		name = "NanoTrasen Synthbreasts"
+		icon_state = "robo-nanotrasen"
+		do_colouration = 0
+
+	brt_scorpius
+		name = "Scorpius Synthbreasts"
+		icon_state = "robo-scorpius"
+		do_colouration = 0
+
+	brt_morpheus
+		name = "Morpheus Synthbreasts"
+		icon_state = "robo-morpheus"
+		do_colouration = 0
+
+	brt_unbranded
+		name = "Unbranded Synthbreasts"
+		icon_state = "robo-unbranded"
+		do_colouration = 0
 
 
 /*
