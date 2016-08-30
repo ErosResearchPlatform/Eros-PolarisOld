@@ -1432,6 +1432,7 @@
 		return
 	hide_underwear[UWC.name] = !hide_underwear[UWC.name]
 	update_underwear(1)
+	update_genitals_showing()
 	src << "<span class='notice'>You [hide_underwear[UWC.name] ? "take off" : "put on"] your [UWC.display_name].</span>"
 	return
 

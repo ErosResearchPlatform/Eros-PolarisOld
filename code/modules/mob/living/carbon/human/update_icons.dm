@@ -1063,10 +1063,11 @@ var/global/list/damage_icon_parts = list()
 		for(var/undies in all_underwear)
 			if(istype(all_underwear[undies], /datum/category_item/underwear))
 				var/datum/category_item/underwear/eunde = all_underwear[undies]
-				if (!(eunde.show_boobs))
-					draw_boobs = 0
-				if (!(eunde.show_genitals))
-					draw_genitals = 0
+				if(!hide_underwear[undies])
+					if (!(eunde.show_boobs))
+						draw_boobs = 0
+					if (!(eunde.show_genitals))
+						draw_genitals = 0
 		if (draw_boobs)
 			if(breasts && breasts.species_allowed && (src.species.get_bodytype() in breasts.species_allowed))
 				if(!(w_uniform && !(euniform.show_boobs)) && !(wear_suit && !(esuit.show_boobs)))
