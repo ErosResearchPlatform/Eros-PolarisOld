@@ -248,3 +248,8 @@
 	desc = "Not a lot of horses to ride in space."
 	icon_state = "cowboy"
 	item_state = "cowboy"
+
+/obj/item/clothing/shoes/flipflop
+	name = "flip flops"
+	desc = "A pair of foam flip flops. For those not afraid to show a little ankle."
+	icon_state = "thongsandal"

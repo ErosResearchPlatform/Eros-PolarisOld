@@ -105,6 +105,7 @@
 	economic_modifier = 5
 	access = list(access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_qm, access_mining, access_mining_station)
 	minimal_access = list(access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_qm, access_mining, access_mining_station)
+	alt_titles = list("Supply Chief")
 
 	ideal_character_age = 40
 
@@ -201,8 +202,7 @@
 	idtype = /obj/item/weapon/card/id/civilian
 	access = list(access_janitor, access_maint_tunnels)
 	minimal_access = list(access_janitor, access_maint_tunnels)
-	ideal_character_age = 70  // Same as captain :^) ,
-	alt_titles = list("Custodian","Maid","Servant")
+	alt_titles = list("Custodian","Maid","Servant", "Sanitation Technician")
 
 	equip(var/mob/living/carbon/human/H, var/alt_title)
 		if(!H)	return 0
@@ -234,7 +234,7 @@
 	idtype = /obj/item/weapon/card/id/civilian
 	access = list(access_library, access_maint_tunnels)
 	minimal_access = list(access_library)
-	alt_titles = list("Journalist","Writer","Bookkeeper","Curator","Archivist","Author")
+	alt_titles = list("Journalist","Writer","Bookkeeper","Curator","Archivist","Author", "Professor", "Historian")
 
 
 	equip(var/mob/living/carbon/human/H)
