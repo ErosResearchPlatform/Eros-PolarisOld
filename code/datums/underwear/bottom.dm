@@ -58,3 +58,8 @@
 /datum/category_item/underwear/bottom/fishnet_lower
 	name = "Fishnets"
 	icon_state = "fishnet_lower"
+
+/datum/category_item/underwear/bottom/Eros_Oriental_Loincloth
+	name = "Oriental Loincloth"
+	icon_state = "eros_oriental_loincloth"
+	has_color = "True"
