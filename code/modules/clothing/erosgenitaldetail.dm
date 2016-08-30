@@ -154,14 +154,6 @@
 /datum/category_item/underwear/bottom/none
 	show_genitals = 1
 
-/datum/category_item/underwear/bottom/thong
-	show_genitals = 1
-
-/datum/category_item/underwear/bottom/lacy_thong
-	show_genitals = 1
-
-/datum/category_item/underwear/bottom/lacy_thong_alt
-	show_genitals = 1
 
 //top
 
