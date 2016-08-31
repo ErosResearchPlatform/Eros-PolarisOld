@@ -436,10 +436,6 @@
 		name = "Poofy"
 		icon_state = "hair_poofy"
 
-	poofy2
-		name = "Poofy2"
-		icon_state = "hair_poofy2"
-
 	crono
 		name = "Chrono"
 		icon_state = "hair_toriyama"
@@ -968,10 +964,6 @@
 	vag_normal
 		name = "Normal Vagina"
 		icon_state = "normal"
-
-	vag_hairy
-		name = "Hairy Vagina"
-		icon_state = "hairy"
 
 	vag_gaping
 		name = "Gaping Vagina"
