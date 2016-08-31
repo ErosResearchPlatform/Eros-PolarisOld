@@ -436,6 +436,10 @@
 		name = "Poofy"
 		icon_state = "hair_poofy"
 
+	poofy2
+		name = "Poofy2"
+		icon_state = "hair_poofy2"
+
 	crono
 		name = "Chrono"
 		icon_state = "hair_toriyama"
