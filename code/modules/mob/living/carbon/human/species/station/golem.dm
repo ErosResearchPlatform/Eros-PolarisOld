@@ -10,7 +10,10 @@
 	flags = NO_PAIN | NO_SCAN | NO_POISON | NO_MINOR_CUT
 	spawn_flags = SPECIES_IS_RESTRICTED
 	siemens_coefficient = 0
-
+	slowdown = 3
+	brute_mod = 0.8
+	burn_mod = 0.8
+	total_health = 200
 	breath_type = null
 	poison_type = null
 

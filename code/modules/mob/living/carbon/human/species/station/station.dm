@@ -8,15 +8,16 @@
 	While the central Sol government maintains control of its far-flung people, powerful corporate \
 	interests, rampant cyber and bio-augmentation and secretive factions make life on most human \
 	worlds tumultous at best."
-	num_alternate_languages = 2
+	num_alternate_languages = 3
 	secondary_langs = list("Sol Common")
 	name_language = null // Use the first-name last-name generator rather than a language scrambler
 	min_age = 18
 	max_age = 110
 	health_hud_intensity = 1.5
+	slowdown = -1
 
 	spawn_flags = SPECIES_CAN_JOIN
-	appearance_flags = HAS_HAIR_COLOR | HAS_SKIN_COLOR | HAS_LIPS | HAS_UNDERWEAR | HAS_EYE_COLOR
+	appearance_flags = HAS_HAIR_COLOR | HAS_SKIN_COLOR | HAS_LIPS | HAS_UNDERWEAR | HAS_EYE_COLOR | HAS_BIOMODS
 
 /datum/species/human/get_bodytype(var/mob/living/carbon/human/H)
 	return "Human"
@@ -30,10 +31,11 @@
 	tail_animation = 'icons/mob/species/unathi/tail.dmi'
 	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/claws, /datum/unarmed_attack/bite/sharp)
 	primitive_form = "Stok"
-	darksight = 3
+	darksight = 4
 	gluttonous = 1
-	slowdown = 0.5
-	brute_mod = 0.8
+	slowdown = -0.5
+	burn_mod = 0.8
+	brute_mod = 0.9
 	num_alternate_languages = 2
 	secondary_langs = list("Sinta'unathi")
 	name_language = "Sinta'unathi"
@@ -57,7 +59,7 @@
 	heat_level_3 = 1100 //Default 1000
 
 	spawn_flags = SPECIES_CAN_JOIN
-	appearance_flags = HAS_HAIR_COLOR | HAS_LIPS | HAS_UNDERWEAR | HAS_SKIN_COLOR | HAS_EYE_COLOR
+	appearance_flags = HAS_HAIR_COLOR | HAS_LIPS | HAS_UNDERWEAR | HAS_SKIN_COLOR | HAS_EYE_COLOR | HAS_BIOMODS
 
 	flesh_color = "#34AF10"
 
@@ -91,14 +93,14 @@
 	tail_animation = 'icons/mob/species/tajaran/tail.dmi'
 	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/claws, /datum/unarmed_attack/bite/sharp)
 	darksight = 8
-	slowdown = -0.5
-	brute_mod = 1.15
-	burn_mod =  1.15
+	flash_mod = 1.5
+	burn_mod =  1.1
 	gluttonous = 1
 	num_alternate_languages = 2
 	secondary_langs = list("Siik")
 	name_language = "Siik"
 	health_hud_intensity = 2.5
+	slowdown = -1
 
 	min_age = 18
 	max_age = 80
@@ -120,7 +122,7 @@
 	primitive_form = "Farwa"
 
 	spawn_flags = SPECIES_CAN_JOIN
-	appearance_flags = HAS_HAIR_COLOR | HAS_LIPS | HAS_UNDERWEAR | HAS_SKIN_COLOR | HAS_EYE_COLOR
+	appearance_flags = HAS_HAIR_COLOR | HAS_LIPS | HAS_UNDERWEAR | HAS_SKIN_COLOR | HAS_EYE_COLOR | HAS_BIOMODS
 
 	flesh_color = "#AFA59E"
 	base_color = "#333333"
@@ -148,19 +150,21 @@
 	blurb = "Place Akula lore here."
 	tail = "sharktail"
 	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/bite/sharp)
-	brute_mod = 1.15
-	burn_mod = 0.90
+	brute_mod = 1.2
+	burn_mod = 0.9
+	radiation_mod = 0.9
 	gluttonous = 1
 	darksight = 4
 	num_alternate_languages = 2
 	secondary_langs = list("Skrellian")
 	name_language = null
+	slowdown = -1
 
 	min_age = 18
 	max_age = 100
 
 	spawn_flags = SPECIES_CAN_JOIN
-	appearance_flags = HAS_HAIR_COLOR | HAS_LIPS | HAS_UNDERWEAR | HAS_SKIN_COLOR | HAS_EYE_COLOR
+	appearance_flags = HAS_HAIR_COLOR | HAS_LIPS | HAS_UNDERWEAR | HAS_SKIN_COLOR | HAS_EYE_COLOR | HAS_BIOMODS
 
 	flesh_color = "#AFA59E"
 	blood_color = "#1D2CBF"
@@ -196,12 +200,15 @@
 	secondary_langs = list("Skrellian", "Schechi")
 	name_language = "Skrellian"
 	health_hud_intensity = 2
+	toxins_mod = 1.15
+	burn_mod = 0.9
+	slowdown = -1
 
 	min_age = 18
 	max_age = 80
 
 	spawn_flags = SPECIES_CAN_JOIN
-	appearance_flags = HAS_HAIR_COLOR | HAS_LIPS | HAS_UNDERWEAR | HAS_SKIN_COLOR
+	appearance_flags = HAS_HAIR_COLOR | HAS_LIPS | HAS_UNDERWEAR | HAS_SKIN_COLOR | HAS_BIOMODS
 
 	flesh_color = "#8CD7A3"
 	blood_color = "#1D2CBF"
@@ -231,7 +238,7 @@
 	language = "Rootspeak"
 	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/diona)
 	//primitive_form = "Nymph"
-	slowdown = 7
+	slowdown = 3
 	rarity_value = 3
 	hud_type = /datum/hud_data/diona
 	siemens_coefficient = 0.3
@@ -239,6 +246,10 @@
 	num_alternate_languages = 1
 	name_language = "Rootspeak"
 	health_hud_intensity = 2.5
+	total_health = 175
+	brute_mod = 0.75
+	burn_mod = 1.5
+	toxins_mod = 1.2
 
 	min_age = 1
 	max_age = 300
@@ -291,7 +302,7 @@
 
 	body_temperature = T0C + 15		//make the plant people have a bit lower body temperature, why not
 
-	flags = NO_SCAN | IS_PLANT | NO_PAIN | NO_SLIP | NO_MINOR_CUT
+	flags = NO_SCAN | IS_PLANT | NO_SLIP | NO_MINOR_CUT
 	spawn_flags = SPECIES_CAN_JOIN
 
 	blood_color = "#004400"
@@ -348,11 +359,14 @@
 	name_language = "Sehlin"
 	min_age = 18
 	max_age = 110
+	total_health = 125
+	slowdown = -1
+	toxins_mod = 0.75
 
 	gluttonous = 3 // they eat people! (only one at a time)
 
 	spawn_flags = SPECIES_CAN_JOIN
-	appearance_flags = HAS_HAIR_COLOR | HAS_SKIN_COLOR | HAS_LIPS | HAS_UNDERWEAR | HAS_EYE_COLOR
+	appearance_flags = HAS_HAIR_COLOR | HAS_SKIN_COLOR | HAS_LIPS | HAS_UNDERWEAR | HAS_EYE_COLOR | HAS_BIOMODS | NO_MINOR_CUT
 
 	has_limbs = list(
 		BP_TORSO =  list("path" = /obj/item/organ/external/chest),

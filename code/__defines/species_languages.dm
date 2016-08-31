@@ -16,10 +16,11 @@
 //#define freeflag     0x1
 #define HAS_SKIN_COLOR    0x2    // Skin colour selectable in chargen. (RGB)
 #define HAS_LIPS          0x4    // Lips are drawn onto the mob icon. (lipstick)
-#define HAS_UNDERWEAR     0x8    // Underwear is drawn onto the mob icon.
+#define HAS_UNDERWEAR     0x8    // Underwear is drawn onto the mob icon. //also defines if the subject uses or not the lewd interface.
 #define HAS_EYE_COLOR     0x10   // Eye colour selectable in chargen. (RGB)
 #define HAS_HAIR_COLOR    0x20   // Hair colour selectable in chargen. (RGB)
 #define RADIATION_GLOWS   0x40   // Radiation causes this character to glow.
+#define HAS_BIOMODS       0x80   // Radiation causes this character to glow. //defines if the user uses or not the biomods interface
 
 // Languages.
 #define LANGUAGE_SOL_COMMON "Sol Common"

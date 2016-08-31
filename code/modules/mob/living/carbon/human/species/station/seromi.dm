@@ -27,9 +27,8 @@
 	blood_mask = 'icons/mob/human_races/masks/blood_seromi.dmi'
 
 	slowdown = -1
-	total_health = 50
-	brute_mod = 1.35
-	burn_mod =  1.35
+	total_health = 75
+	brute_mod = 1.5
 	mob_size = MOB_SMALL
 	holder_type = /obj/item/weapon/holder/human
 	short_sighted = 1
@@ -38,7 +37,7 @@
 	hunger_factor = 0.2
 
 	spawn_flags = SPECIES_CAN_JOIN | SPECIES_IS_WHITELISTED
-	appearance_flags = HAS_HAIR_COLOR | HAS_SKIN_COLOR | HAS_EYE_COLOR
+	appearance_flags = HAS_HAIR_COLOR | HAS_SKIN_COLOR | HAS_EYE_COLOR | HAS_BIOMODS
 	bump_flag = MONKEY
 	swap_flags = MONKEY|SLIME|SIMPLE_ANIMAL
 	push_flags = MONKEY|SLIME|SIMPLE_ANIMAL|ALIEN
@@ -49,7 +48,7 @@
 	heat_level_1 = 320
 	heat_level_2 = 370
 	heat_level_3 = 600
-	heat_discomfort_level = 292
+	heat_discomfort_level = 295
 	heat_discomfort_strings = list(
 		"Your feathers prickle in the heat.",
 		"You feel uncomfortably warm.",
