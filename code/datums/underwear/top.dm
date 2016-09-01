@@ -53,3 +53,7 @@
 /datum/category_item/underwear/top/fishnet_gloves
 	name = "Fishnet with gloves"
 	icon_state = "fishnet_gloves"
+
+/datum/category_item/underwear/top/eros_breast_wrap
+	name = "Breast wrapping"
+	icon_state = "eros_breast_wrap"
