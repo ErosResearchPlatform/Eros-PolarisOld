@@ -57,3 +57,4 @@
 /datum/category_item/underwear/top/eros_breast_wrap
 	name = "Breast wrapping"
 	icon_state = "eros_breast_wrap"
+	has_color = TRUE
