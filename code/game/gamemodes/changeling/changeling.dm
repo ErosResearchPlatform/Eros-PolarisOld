@@ -13,7 +13,7 @@
 	votable = 0
 	config_tag = "changeling"
 	required_players = 2
-	required_players_secret = 2
+	required_players_secret = 3
 	required_enemies = 1
 	end_on_antag_death = 0
 	antag_scaling_coeff = 10
