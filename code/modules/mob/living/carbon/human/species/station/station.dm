@@ -14,7 +14,6 @@
 	min_age = 18
 	max_age = 110
 	health_hud_intensity = 1.5
-	slowdown = -1
 
 	spawn_flags = SPECIES_CAN_JOIN
 	appearance_flags = HAS_HAIR_COLOR | HAS_SKIN_COLOR | HAS_LIPS | HAS_UNDERWEAR | HAS_EYE_COLOR | HAS_BIOMODS
@@ -248,8 +247,8 @@
 	health_hud_intensity = 2.5
 	total_health = 175
 	brute_mod = 0.75
-	burn_mod = 1.5
-	toxins_mod = 1.2
+	burn_mod = 1.2
+	toxins_mod = 1.5
 
 	min_age = 1
 	max_age = 300
