@@ -428,6 +428,10 @@
 		name = "Drillruru"
 		icon_state = "hair_drillruru"
 
+	mahdrills2
+		name = "Drillruru2"
+		icon_state = "hair_drillruru2"
+
 	dandypomp
 		name = "Dandy Pompadour"
 		icon_state = "hair_dandypompadour"
