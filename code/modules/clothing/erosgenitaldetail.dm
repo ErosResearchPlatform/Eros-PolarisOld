@@ -135,7 +135,9 @@
 /obj/item/clothing/under/rank/security/head_of_security/skirt
 	show_genitals = 1
 
-
+/obj/item/clothing/under/skirt/eros_loosedress
+	show_boobs = 1
+	show_genitals = 1
 
 //////////////////////////////////
 /// Underwear Genitals Details ///

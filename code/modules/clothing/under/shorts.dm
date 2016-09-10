@@ -220,3 +220,9 @@
 	desc = "It's a fashionable jumpskirt worn by those few with the dedication to achieve the position of \"Head of Security\". It has additional armor to protect the wearer."
 	name = "head of security's jumpskirt"
 	icon_state = "hosf"
+
+/obj/item/clothing/under/skirt/eros_loosedress
+	desc = "A rather simple looking dress, that tends to have the habit of showing those around you more than what they asked for."
+	name = "loose dress"
+	icon_state = "eros_loosedress"
+	rolled_sleeves = 0
