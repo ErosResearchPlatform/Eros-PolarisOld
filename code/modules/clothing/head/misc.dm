@@ -331,21 +331,25 @@
 /obj/item/clothing/head/pinkpin
 	name = "pink hairpin"
 	desc = "A cute pink hairpin."
+	slot_flags = SLOT_HEAD | SLOT_EARS
 	icon_state = "eros_pinpink"
 
 /obj/item/clothing/head/cloverpin
 	name = "lucky clover hairpin"
 	desc = "Four leaves! Maybe you'll get lucky this shift."
+	slot_flags = SLOT_HEAD | SLOT_EARS
 	icon_state = "eros_pinclover"
 
 /obj/item/clothing/head/butterflypin
 	name = "butterfly hairpin"
 	desc = "A delicate looking mass-produced plastic butterfly pin."
+	slot_flags = SLOT_HEAD | SLOT_EARS
 	icon_state = "eros_pinbutterfly"
 
 /obj/item/clothing/head/magnetclips
 	name = "magnet hairclips"
 	desc = "Wearing these is a good excuse to be contrary, because they're positive and negative."
+	slot_flags = SLOT_HEAD | SLOT_EARS
 	icon_state = "eros_magnetclip"
 
 /obj/item/clothing/head/hairribbon
