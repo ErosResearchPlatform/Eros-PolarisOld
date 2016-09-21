@@ -63,7 +63,7 @@ var/global/list/body_wings_list = list()
 var/global/list/body_tails_list = list()
 
 	//Backpacks
-var/global/list/backbaglist = list("Nothing", "Backpack", "Satchel", "Satchel Alt")
+var/global/list/backbaglist = list("Nothing", "Backpack", "Satchel", "Satchel Alt", "Messenger Bag")
 var/global/list/pdachoicelist = list("Default", "Slim", "Old")
 var/global/list/exclude_jobs = list(/datum/job/ai,/datum/job/cyborg)
 
